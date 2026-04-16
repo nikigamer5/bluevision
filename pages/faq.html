@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ | BlueVision</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .faq-item {
+      background: rgba(30, 41, 59, 0.6);
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .faq-item:hover {
+      border-color: var(--primary);
+      background: rgba(30, 41, 59, 0.8);
+    }
+    .faq-question {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    .faq-question i {
+      color: var(--primary);
+      transition: transform 0.3s;
+    }
+    .faq-item.active .faq-question i {
+      transform: rotate(90deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      color: #cbd5e1;
+      padding-left: 35px;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 200px;
+      margin-top: 15px;
+    }
+    .faq-categories {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+    .faq-category {
+      background: transparent;
+      border: 1.5px solid rgba(59, 130, 246, 0.5);
+      padding: 10px 24px;
+      border-radius: 30px;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .faq-category:hover, .faq-category.active {
+      background: var(--primary);
+      border-color: var(--primary);
+    }
+  </style>
+</head>
+<body>
+  <canvas id="networkCanvas"></canvas>
+  <div class="bg-overlay"></div>
+
+  <header>
+    <div class="container navbar">
+      <div class="logo">
+        <i class="fas fa-eye"></i>
+        <span>Blue<span class="vision-highlight">Vision</span></span>
+      </div>
+      <div class="nav-links">
+        <a href="/BlueVision/"><i class="fas fa-home"></i> Home</a>
+        <a href="/BlueVision/#spoofer"><i class="fas fa-shield-virus"></i> Spoofer</a>
+        <a href="/BlueVision/#stock"><i class="fas fa-boxes"></i> Stock</a>
+        <a href="/BlueVision/#scripts"><i class="fas fa-code"></i> Scripts</a>
+        <a href="/BlueVision/#accounts"><i class="fas fa-users"></i> Accounts</a>
+      </div>
+      <div class="header-actions">
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="de">DE</button>
+          <span class="lang-divider">|</span>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+        <a href="https://discord.gg/38QmF8TKCr" target="_blank" class="discord-btn">
+          <i class="fab fa-discord"></i> Discord
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <div class="container">
+      <div class="page-card">
+        <h1><i class="fas fa-question-circle"></i> Frequently Asked Questions</h1>
+        <p>Find answers to common questions about our products and services.</p>
+
+        <div class="faq-categories">
+          <button class="faq-category active" data-category="all">All</button>
+          <button class="faq-category" data-category="general">General</button>
+          <button class="faq-category" data-category="spoofer">Spoofer</button>
+          <button class="faq-category" data-category="scripts">Scripts</button>
+          <button class="faq-category" data-category="accounts">Accounts</button>
+          <button class="faq-category" data-category="payment">Payment</button>
+        </div>
+
+        <div id="faqContainer">
+          <div class="faq-item" data-category="general">
+            <div class="faq-question">
+              <i class="fas fa-chevron-right"></i>
+              <span>What is BlueVision?</span>
+            </div>
+            <div class="faq-answer">
+              BlueVision is a premium provider of HWID spoofers, Roblox scripts, game accounts, and digital tools. We've been serving the community since 2022 with high-quality, undetected products.
+            </div>
+          </div>
+
+          <div class="faq-item" data-category="general">
+            <div class="faq-question">
+              <i class="fas fa-chevron-right"></i>
+              <span>How do I join the Discord server?</span>
+            </div>
+            <div class="faq-answer">
+              You can join our Discord server by clicking the "Join Discord" button or using this invite link: <a href="https://discord.gg/38QmF8TKCr" target="_blank" style="color: #3b82f6;">discord.gg/38QmF8TKCr</a>
+            </div>
+          </div>
+
+          <div class="faq-item" data-category="general">
+            <div class="faq-question">
+              <i class="fas fa-chevron-right"></i>
+              <span>Is BlueVision safe to use?</span>
+            </div>
+            <div class="faq-answer">
+              Yes, all our products are thoroughly tested for safety. However, we recommend using a VPN and taking standard security precautions. All products are for educational purposes only.
+            </div>
+          </div>
+
+          <div class="faq-item" data-category="spoofer">
+            <div class="faq-question">
+              <i class="fas fa-chevron-right"></i>
+              <span>What is an HWID Spoofer?</span>
+            </div>
+            <div class="faq-answer">
+              An HWID (Hardware ID) Spoofer changes your computer's hardware identifiers, allowing you to bypass hardware bans in games. Our spoofer is kernel-level and works with EAC, BattlEye, Vanguard, and more.
+            </div>
+          </div>
+
+          <div class="faq-item" data-category="spoofer">
+            <div class="faq-question">
+              <i class="fas fa-chevron-right"></i>
+              <span>Is the spoofer permanent or temporary?</span>
+            </div>
+            <div class="faq-answer">
+              We offer both permanent and temporary spoofers. The permanent spoofer changes your IDs permanently (until you restore them), while the temporary version lasts for 30 days.
+            </div>
+          </div>
+
+          <div class="faq-item" data-category="spoofer">
+            <div class="faq-question">
+              <i class="fas fa-chevron-right"></i>
+              <span>Which anti-cheats does the spoofer work with?</span>
+            </div>
+            <div class="faq-answer">
+              Our spoofer works with EAC (Easy Anti-Cheat), BattlEye, Vanguard, Ricochet, FaceIT, and most other major anti-cheat systems.
+            </div>
+          </div>
+
+          <div class="faq-item" data-category="scripts">
+            <div class="faq-question">
+              <i class="fas fa-chevron-right"></i>
+              <span>What Roblox scripts do you offer?</span>
+            </div>
+            <div class="faq-answer">
+              We offer premium scripts including Emery Hamburg, Phantom X, Synapse Z, Dragon Executor, Script-Ware, and KrX Client. Each comes with unique features like aimbot, ESP, and auto-farm.
+            </div>
+          </div>
+
+          <div class="faq-item" data-category="scripts">
+            <div class="faq-question">
+              <i class="fas fa-chevron-right"></i>
+              <span>Are your Roblox scripts detected?</span>
+            </div>
+            <div class="faq-answer">
+              Our scripts are regularly updated to remain undetected. We provide lifetime updates with all script purchases to ensure continued functionality.
+            </div>
+          </div>
+
+          <div class="faq-item" data-category="scripts">
+            <div class="faq-question">
+              <i class="fas fa-chevron-right"></i>
+              <span>What features do the scripts include?</span>
+            </div>
+            <div class="faq-answer">
+              Features vary by script but generally include: Aimbot, ESP (Wallhack), Auto-Farm, Silent Aim, Teleport, Speed Hack, and Script Executor functionality.
+            </div>
+          </div>
+
+          <div class="faq-item" data-category="accounts">
+            <div class="faq-question">
+              <i class="fas fa-chevron-right"></i>
+              <span>What types of accounts do you sell?</span>
+            </div>
+            <div class="faq-answer">
+              We sell Discord tokens, Roblox accounts (with Robux/limiteds), Fortnite accounts (OG skins), Valorant accounts, Steam accounts, Minecraft accounts, and premium streaming accounts (Spotify, Netflix, Disney+).
+            </div>
+          </div>
+
+          <div class="faq-item" data-category="accounts">
+            <div class="faq-question">
+              <i class="fas fa-chevron-right"></i>
+              <span>Do accounts come with warranty?</span>
+            </div>
+            <div class="faq-answer">
+              Yes, all accounts come with a warranty period (varies by product). If the account doesn't work or gets reclaimed within the warranty period, we'll provide a replacement.
+            </div>
+          </div>
+
+          <div class="faq-item" data-category="accounts">
+            <div class="faq-question">
+              <i class="fas fa-chevron-right"></i>
+              <span>How are accounts delivered?</span>
+            </div>
+            <div class="faq-answer">
+              Accounts are delivered instantly through our automated stock system after purchase. You'll receive the login details immediately.
+            </div>
+          </div>
+
+          <div class="faq-item" data-category="payment">
+            <div class="faq-question">
+              <i class="fas fa-chevron-right"></i>
+              <span>What payment methods do you accept?</span>
+            </div>
+            <div class="faq-answer">
+              We accept PayPal, Credit/Debit Cards (via Stripe), and Cryptocurrency (Bitcoin, Ethereum, Litecoin). All payments are processed securely.
+            </div>
+          </div>
+
+          <div class="faq-item" data-category="payment">
+            <div class="faq-question">
+              <i class="fas fa-chevron-right"></i>
+              <span>Do you offer refunds?</span>
+            </div>
+            <div class="faq-answer">
+              Due to the digital nature of our products, we do not offer refunds. However, we provide replacements for defective products within the warranty period. See our Refund Policy for details.
+            </div>
+          </div>
+
+          <div class="faq-item" data-category="payment">
+            <div class="faq-question">
+              <i class="fas fa-chevron-right"></i>
+              <span>How do I get support after purchase?</span>
+            </div>
+            <div class="faq-answer">
+              Join our Discord server and open a ticket in the #support channel. Our support team is available 24/7 to assist you with any issues.
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 40px; padding: 20px; background: rgba(59, 130, 246, 0.1); border-radius: 15px; text-align: center;">
+          <p style="font-size: 1.2rem; margin-bottom: 15px;">Still have questions?</p>
+          <a href="https://discord.gg/38QmF8TKCr" target="_blank" class="btn-primary" style="display: inline-flex;">
+            <i class="fab fa-discord"></i> Join our Discord for Support
+          </a>
+        </div>
+
+        <a href="/BlueVision/" class="back-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // FAQ Accordion
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', function() {
+        this.classList.toggle('active');
+      });
+    });
+
+    // Category Filter
+    document.querySelectorAll('.faq-category').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.faq-category').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        
+        const category = this.dataset.category;
+        document.querySelectorAll('.faq-item').forEach(item => {
+          if (category === 'all' || item.dataset.category === category) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+  <script src="../script.js"></script>
+</body>
+</html>

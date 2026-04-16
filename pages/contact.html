@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | BlueVision</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+    .contact-card {
+      background: rgba(30, 41, 59, 0.6);
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      transition: all 0.3s;
+    }
+    .contact-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary);
+    }
+    .contact-card i {
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+    .contact-card h3 {
+      margin-bottom: 15px;
+    }
+    .contact-card p {
+      color: #94a3b8;
+      margin-bottom: 20px;
+    }
+    .contact-link {
+      display: inline-block;
+      background: var(--primary);
+      padding: 10px 25px;
+      border-radius: 30px;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .contact-link:hover {
+      background: var(--primary-dark);
+      transform: scale(1.05);
+    }
+    @media (max-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="networkCanvas"></canvas>
+  <div class="bg-overlay"></div>
+
+  <header>
+    <div class="container navbar">
+      <div class="logo">
+        <i class="fas fa-eye"></i>
+        <span>Blue<span class="vision-highlight">Vision</span></span>
+      </div>
+      <div class="nav-links">
+        <a href="/BlueVision/"><i class="fas fa-home"></i> Home</a>
+        <a href="/BlueVision/#spoofer"><i class="fas fa-shield-virus"></i> Spoofer</a>
+        <a href="/BlueVision/#stock"><i class="fas fa-boxes"></i> Stock</a>
+        <a href="/BlueVision/#scripts"><i class="fas fa-code"></i> Scripts</a>
+        <a href="/BlueVision/#accounts"><i class="fas fa-users"></i> Accounts</a>
+      </div>
+      <div class="header-actions">
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="de">DE</button>
+          <span class="lang-divider">|</span>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+        <a href="https://discord.gg/38QmF8TKCr" target="_blank" class="discord-btn">
+          <i class="fab fa-discord"></i> Discord
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <div class="container">
+      <div class="page-card">
+        <h1><i class="fas fa-envelope"></i> Contact Us</h1>
+        <p>We're here to help! Choose the best way to reach us.</p>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <i class="fab fa-discord"></i>
+            <h3>Discord Support</h3>
+            <p>Fastest response time. Join our server and open a ticket.</p>
+            <a href="https://discord.gg/38QmF8TKCr" target="_blank" class="contact-link">
+              <i class="fab fa-discord"></i> Join Discord
+            </a>
+          </div>
+
+          <div class="contact-card">
+            <i class="fas fa-ticket-alt"></i>
+            <h3>Ticket System</h3>
+            <p>Already in Discord? Open a ticket for dedicated support.</p>
+            <a href="https://discord.gg/38QmF8TKCr" target="_blank" class="contact-link">
+              <i class="fas fa-ticket-alt"></i> Open Ticket
+            </a>
+          </div>
+
+          <div class="contact-card">
+            <i class="fas fa-clock"></i>
+            <h3>Response Time</h3>
+            <p>We typically respond within 15-30 minutes, 24/7.</p>
+            <div style="color: var(--success); margin-top: 20px;">
+              <i class="fas fa-circle online-pulse"></i> Online Now
+            </div>
+          </div>
+        </div>
+
+        <h2 style="margin: 40px 0 20px;">Business Inquiries</h2>
+        <p>For business partnerships, affiliate programs, or bulk purchases, please contact us via Discord and mention "Business Inquiry" in your ticket.</p>
+
+        <h2 style="margin: 40px 0 20px;">Common Support Topics</h2>
+        <ul style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
+          <li><i class="fas fa-check-circle" style="color: var(--success);"></i> Order Issues / Missing Delivery</li>
+          <li><i class="fas fa-check-circle" style="color: var(--success);"></i> Product Not Working</li>
+          <li><i class="fas fa-check-circle" style="color: var(--success);"></i> Account Replacement Request</li>
+          <li><i class="fas fa-check-circle" style="color: var(--success);"></i> Payment Questions</li>
+          <li><i class="fas fa-check-circle" style="color: var(--success);"></i> Technical Support</li>
+          <li><i class="fas fa-check-circle" style="color: var(--success);"></i> General Inquiries</li>
+        </ul>
+
+        <div style="margin-top: 40px; padding: 20px; background: rgba(88, 101, 242, 0.1); border-radius: 15px; border: 1px solid #5865F2;">
+          <p style="display: flex; align-items: center; gap: 10px;">
+            <i class="fab fa-discord" style="font-size: 2rem; color: #5865F2;"></i>
+            <span><strong>Discord Server:</strong> <a href="https://discord.gg/38QmF8TKCr" target="_blank" style="color: #5865F2;">discord.gg/38QmF8TKCr</a></span>
+          </p>
+        </div>
+
+        <a href="/BlueVision/" class="back-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="../script.js"></script>
+</body>
+</html>

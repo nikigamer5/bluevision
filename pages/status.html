@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Status | BlueVision</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .status-grid {
+      display: grid;
+      gap: 20px;
+    }
+    .status-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      background: rgba(30, 41, 59, 0.6);
+      border-radius: 15px;
+      border: 1px solid rgba(59, 130, 246, 0.2);
+    }
+    .status-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .status-left i {
+      font-size: 1.5rem;
+      color: var(--primary);
+      width: 30px;
+    }
+    .status-badge {
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .status-operational {
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--success);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    .status-warning {
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--warning);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <canvas id="networkCanvas"></canvas>
+  <div class="bg-overlay"></div>
+
+  <header>
+    <div class="container navbar">
+      <div class="logo">
+        <i class="fas fa-eye"></i>
+        <span>Blue<span class="vision-highlight">Vision</span></span>
+      </div>
+      <div class="nav-links">
+        <a href="/BlueVision/"><i class="fas fa-home"></i> Home</a>
+      </div>
+      <div class="header-actions">
+        <a href="https://discord.gg/38QmF8TKCr" target="_blank" class="discord-btn">
+          <i class="fab fa-discord"></i> Discord
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <div class="container">
+      <div class="page-card">
+        <h1><i class="fas fa-chart-line"></i> System Status</h1>
+        <p>Real-time status of all BlueVision services.</p>
+
+        <div class="status-grid">
+          <div class="status-item">
+            <div class="status-left">
+              <i class="fas fa-globe"></i>
+              <span>Website</span>
+            </div>
+            <span class="status-badge status-operational"><i class="fas fa-check-circle"></i> Operational</span>
+          </div>
+          <div class="status-item">
+            <div class="status-left">
+              <i class="fas fa-shield-virus"></i>
+              <span>HWID Spoofer</span>
+            </div>
+            <span class="status-badge status-operational"><i class="fas fa-check-circle"></i> Undetected</span>
+          </div>
+          <div class="status-item">
+            <div class="status-left">
+              <i class="fas fa-code"></i>
+              <span>Roblox Scripts</span>
+            </div>
+            <span class="status-badge status-operational"><i class="fas fa-check-circle"></i> Undetected</span>
+          </div>
+          <div class="status-item">
+            <div class="status-left">
+              <i class="fas fa-boxes"></i>
+              <span>Stock System</span>
+            </div>
+            <span class="status-badge status-operational"><i class="fas fa-check-circle"></i> Operational</span>
+          </div>
+          <div class="status-item">
+            <div class="status-left">
+              <i class="fab fa-discord"></i>
+              <span>Discord Support</span>
+            </div>
+            <span class="status-badge status-operational"><i class="fas fa-circle online-pulse"></i> Online</span>
+          </div>
+        </div>
+
+        <p style="margin-top: 30px; text-align: center;">Last updated: <span id="lastUpdate"></span></p>
+
+        <a href="/BlueVision/" class="back-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('lastUpdate').textContent = new Date().toLocaleString();
+  </script>
+  <script src="../script.js"></script>
+</body>
+</html>
