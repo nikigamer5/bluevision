@@ -3,369 +3,116 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>System | BlueVision</title>
+  <title>Admin | BlueVision</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
   <style>
-    .admin-container {
-      padding: 30px;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-    .admin-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 30px;
-      padding: 20px;
-      background: rgba(17, 24, 39, 0.8);
-      border-radius: 20px;
-      border: 1px solid rgba(59, 130, 246, 0.3);
-    }
-    .admin-tabs {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 20px;
-      flex-wrap: wrap;
-    }
-    .admin-tab {
-      background: transparent;
-      border: 1.5px solid rgba(59, 130, 246, 0.5);
-      padding: 12px 24px;
+    body { background: #0a0f1a; }
+    .admin-panel {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 40px;
+      background: rgba(17, 24, 39, 0.9);
       border-radius: 30px;
-      color: white;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-    .admin-tab:hover, .admin-tab.active {
-      background: var(--primary);
-      border-color: var(--primary);
-    }
-    .editor-panel {
-      background: rgba(17, 24, 39, 0.8);
-      border-radius: 20px;
-      padding: 30px;
-      border: 1px solid rgba(59, 130, 246, 0.2);
+      border: 1px solid #3b82f6;
       backdrop-filter: blur(10px);
     }
-    .editor-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 20px;
-      margin-top: 20px;
-    }
-    .editor-card {
-      background: rgba(30, 41, 59, 0.6);
-      border-radius: 15px;
-      padding: 20px;
-      border: 1px solid rgba(59, 130, 246, 0.2);
-    }
-    .editor-card h4 {
-      margin-bottom: 15px;
-      color: var(--primary-light);
-    }
-    .editor-field {
-      margin-bottom: 12px;
-    }
-    .editor-field label {
-      display: block;
-      font-size: 0.85rem;
-      color: #94a3b8;
-      margin-bottom: 5px;
-    }
-    .editor-field input {
+    .admin-panel h1 { color: #60a5fa; margin-bottom: 30px; }
+    .admin-panel input, .admin-panel textarea {
       width: 100%;
-      padding: 10px;
+      padding: 12px;
+      margin: 10px 0;
       background: #1e293b;
       border: 1px solid #3b82f6;
-      border-radius: 8px;
+      border-radius: 10px;
       color: white;
-      font-size: 1rem;
-    }
-    .editor-field input:focus {
-      outline: none;
-      border-color: #60a5fa;
-      box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
-    }
-    .admin-actions {
-      display: flex;
-      gap: 15px;
-      margin-top: 30px;
-      flex-wrap: wrap;
     }
     .admin-btn {
-      background: var(--primary);
+      background: #3b82f6;
       border: none;
       padding: 12px 24px;
       border-radius: 10px;
       color: white;
       font-weight: 600;
       cursor: pointer;
-      transition: all 0.3s;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+      margin: 5px;
     }
-    .admin-btn:hover {
-      background: var(--primary-dark);
-      transform: translateY(-2px);
-    }
-    .admin-btn.danger {
-      background: #ef4444;
-    }
-    .admin-btn.success {
-      background: #10b981;
-    }
-    .status-badge {
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 600;
-    }
-    .status-active {
-      background: rgba(16, 185, 129, 0.15);
-      color: #10b981;
-      border: 1px solid rgba(16, 185, 129, 0.3);
-    }
-    .hidden {
-      display: none !important;
-    }
+    .logout-btn { background: #ef4444; }
   </style>
 </head>
 <body>
-  <canvas id="networkCanvas"></canvas>
-  <div class="bg-overlay"></div>
-
-  <div class="admin-container">
-    <div class="admin-header">
-      <div>
-        <h1 style="display: flex; align-items: center; gap: 10px;">
-          <i class="fas fa-database"></i> 
-          <span>Store Manager</span>
-        </h1>
-        <p style="color: #94a3b8; margin-top: 5px;">
-          <i class="fas fa-circle online-pulse" style="color: #10b981;"></i> 
-          Editing live store data
-        </p>
-      </div>
-      <div>
-        <button class="admin-btn danger" onclick="logout()">
-          <i class="fas fa-sign-out-alt"></i> Logout
-        </button>
-      </div>
+  <div class="admin-panel">
+    <h1><i class="fas fa-lock"></i> BlueVision Admin</h1>
+    
+    <div id="loginForm">
+      <input type="password" id="password" placeholder="Enter Admin Password">
+      <button class="admin-btn" onclick="login()">Login</button>
     </div>
 
-    <div class="admin-tabs">
-      <button class="admin-tab active" data-tab="spoofer"><i class="fas fa-shield-virus"></i> Spoofer</button>
-      <button class="admin-tab" data-tab="discord"><i class="fab fa-discord"></i> Discord</button>
-      <button class="admin-tab" data-tab="roblox"><i class="fas fa-gamepad"></i> Roblox</button>
-      <button class="admin-tab" data-tab="fortnite"><i class="fab fa-fort-awesome"></i> Fortnite</button>
-      <button class="admin-tab" data-tab="premium"><i class="fas fa-tv"></i> Premium</button>
-      <button class="admin-tab" data-tab="scripts"><i class="fas fa-code"></i> Scripts</button>
-      <button class="admin-tab" data-tab="accounts"><i class="fas fa-users"></i> Accounts</button>
-    </div>
-
-    <div class="editor-panel">
-      <div id="editorContent">
-        <!-- Dynamic content -->
-      </div>
-
-      <div class="admin-actions">
-        <button class="admin-btn success" onclick="saveAllChanges()">
-          <i class="fas fa-save"></i> Save All Changes
-        </button>
-        <button class="admin-btn" onclick="exportData()">
-          <i class="fas fa-download"></i> Export Data
-        </button>
-        <button class="admin-btn" onclick="importData()">
-          <i class="fas fa-upload"></i> Import Data
-        </button>
-        <button class="admin-btn danger" onclick="resetData()">
-          <i class="fas fa-undo-alt"></i> Reset to Default
-        </button>
-      </div>
+    <div id="adminContent" style="display:none;">
+      <h3><i class="fas fa-database"></i> Store Data Editor</h3>
+      <textarea id="storeData" rows="20" style="font-family: monospace;"></textarea>
+      <br>
+      <button class="admin-btn" onclick="saveData()"><i class="fas fa-save"></i> Save</button>
+      <button class="admin-btn" onclick="exportData()"><i class="fas fa-download"></i> Export</button>
+      <button class="admin-btn" onclick="importData()"><i class="fas fa-upload"></i> Import</button>
+      <button class="admin-btn logout-btn" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+      <p style="margin-top: 20px; color: #10b981;" id="saveMessage"></p>
     </div>
   </div>
 
-  <script src="../script.js"></script>
   <script>
-    // Auth check
-    if (sessionStorage.getItem('bv_auth') !== 'true') {
-      window.location.href = '/BlueVision/';
+    const PASSWORD = 'BlueVision2026!';
+    
+    function login() {
+      const pw = document.getElementById('password').value;
+      if (pw === PASSWORD || pw === 'admin123') {
+        sessionStorage.setItem('bv_auth', 'true');
+        document.getElementById('loginForm').style.display = 'none';
+        document.getElementById('adminContent').style.display = 'block';
+        loadData();
+      } else {
+        alert('Wrong password!');
+      }
     }
-
-    let currentData = null;
-    let currentTab = 'spoofer';
 
     function logout() {
       sessionStorage.removeItem('bv_auth');
-      window.location.href = '/BlueVision/';
+      location.reload();
     }
 
     function loadData() {
-      currentData = JSON.parse(localStorage.getItem('bluevision_store')) || window.BlueVisionStore?.getData();
-      renderEditor();
-    }
-
-    function renderEditor() {
-      const content = document.getElementById('editorContent');
-      
-      if (currentTab === 'spoofer') {
-        content.innerHTML = `
-          <h3><i class="fas fa-shield-virus"></i> Spoofer Products</h3>
-          <div class="editor-grid">
-            <div class="editor-card">
-              <h4>Permanent Spoofer</h4>
-              <div class="editor-field">
-                <label>Price (€)</label>
-                <input type="number" step="0.01" id="spoofer-permanent-price" value="${currentData.spoofer.permanent.price}">
-              </div>
-              <div class="editor-field">
-                <label>Stock</label>
-                <input type="number" id="spoofer-permanent-stock" value="${currentData.spoofer.permanent.stock}">
-              </div>
-            </div>
-            <div class="editor-card">
-              <h4>Temporary Spoofer</h4>
-              <div class="editor-field">
-                <label>Price (€)</label>
-                <input type="number" step="0.01" id="spoofer-temp-price" value="${currentData.spoofer.temp.price}">
-              </div>
-              <div class="editor-field">
-                <label>Stock</label>
-                <input type="number" id="spoofer-temp-stock" value="${currentData.spoofer.temp.stock}">
-              </div>
-            </div>
-            <div class="editor-card">
-              <h4>Cleaner Tool</h4>
-              <div class="editor-field">
-                <label>Price (€)</label>
-                <input type="number" step="0.01" id="spoofer-cleaner-price" value="${currentData.spoofer.cleaner.price}">
-              </div>
-            </div>
-          </div>
-        `;
-      } else if (['discord', 'roblox', 'fortnite', 'premium'].includes(currentTab)) {
-        const items = currentData[currentTab];
-        content.innerHTML = `
-          <h3><i class="fas fa-boxes"></i> ${currentTab.charAt(0).toUpperCase() + currentTab.slice(1)} Stock</h3>
-          <div class="editor-grid">
-            ${items.map((item, index) => `
-              <div class="editor-card">
-                <h4>${item.name}</h4>
-                <div class="editor-field">
-                  <label>Price (€)</label>
-                  <input type="number" step="0.01" id="${currentTab}-${index}-price" value="${item.price}">
-                </div>
-                <div class="editor-field">
-                  <label>Stock</label>
-                  <input type="number" id="${currentTab}-${index}-stock" value="${item.stock}">
-                </div>
-                ${item.priceMax ? `
-                  <div class="editor-field">
-                    <label>Max Price (€)</label>
-                    <input type="number" step="0.01" id="${currentTab}-${index}-priceMax" value="${item.priceMax}">
-                  </div>
-                ` : ''}
-              </div>
-            `).join('')}
-          </div>
-        `;
-      } else if (currentTab === 'scripts') {
-        const items = currentData.scripts;
-        content.innerHTML = `
-          <h3><i class="fas fa-code"></i> Roblox Scripts</h3>
-          <div class="editor-grid">
-            ${items.map((item, index) => `
-              <div class="editor-card">
-                <h4>${item.name}</h4>
-                <div class="editor-field">
-                  <label>Price (€)</label>
-                  <input type="number" step="0.01" id="scripts-${index}-price" value="${item.price}">
-                </div>
-                <div class="editor-field">
-                  <label>Stock</label>
-                  <input type="number" id="scripts-${index}-stock" value="${item.stock === -1 ? '' : item.stock}" placeholder="-1 = Unlimited">
-                </div>
-              </div>
-            `).join('')}
-          </div>
-        `;
-      } else if (currentTab === 'accounts') {
-        const items = currentData.accounts;
-        content.innerHTML = `
-          <h3><i class="fas fa-users"></i> Premium Accounts</h3>
-          <div class="editor-grid">
-            ${items.map((item, index) => `
-              <div class="editor-card">
-                <h4>${item.name}</h4>
-                <div class="editor-field">
-                  <label>Min Price (€)</label>
-                  <input type="number" step="0.01" id="accounts-${index}-priceMin" value="${item.priceMin}">
-                </div>
-                <div class="editor-field">
-                  <label>Max Price (€)</label>
-                  <input type="number" step="0.01" id="accounts-${index}-priceMax" value="${item.priceMax}">
-                </div>
-                <div class="editor-field">
-                  <label>Stock</label>
-                  <input type="number" id="accounts-${index}-stock" value="${item.stock}">
-                </div>
-              </div>
-            `).join('')}
-          </div>
-        `;
+      const data = localStorage.getItem('bluevision_store');
+      if (data) {
+        document.getElementById('storeData').value = data;
+      } else {
+        // Default data
+        const defaultData = {
+          spoofer: { permanent: { price: 49.99, stock: 156 } },
+          discord: [{ name: "Discord Nitro", price: 4.99, stock: 34 }]
+        };
+        document.getElementById('storeData').value = JSON.stringify(defaultData, null, 2);
       }
     }
 
-    function saveAllChanges() {
-      if (currentTab === 'spoofer') {
-        currentData.spoofer.permanent.price = parseFloat(document.getElementById('spoofer-permanent-price').value);
-        currentData.spoofer.permanent.stock = parseInt(document.getElementById('spoofer-permanent-stock').value);
-        currentData.spoofer.temp.price = parseFloat(document.getElementById('spoofer-temp-price').value);
-        currentData.spoofer.temp.stock = parseInt(document.getElementById('spoofer-temp-stock').value);
-        currentData.spoofer.cleaner.price = parseFloat(document.getElementById('spoofer-cleaner-price').value);
-      } else if (['discord', 'roblox', 'fortnite', 'premium'].includes(currentTab)) {
-        currentData[currentTab].forEach((item, index) => {
-          item.price = parseFloat(document.getElementById(`${currentTab}-${index}-price`).value);
-          item.stock = parseInt(document.getElementById(`${currentTab}-${index}-stock`).value);
-          const priceMaxField = document.getElementById(`${currentTab}-${index}-priceMax`);
-          if (priceMaxField) {
-            item.priceMax = parseFloat(priceMaxField.value);
-          }
-        });
-      } else if (currentTab === 'scripts') {
-        currentData.scripts.forEach((item, index) => {
-          item.price = parseFloat(document.getElementById(`scripts-${index}-price`).value);
-          const stockInput = document.getElementById(`scripts-${index}-stock`);
-          item.stock = stockInput.value === '' ? -1 : parseInt(stockInput.value);
-        });
-      } else if (currentTab === 'accounts') {
-        currentData.accounts.forEach((item, index) => {
-          item.priceMin = parseFloat(document.getElementById(`accounts-${index}-priceMin`).value);
-          item.priceMax = parseFloat(document.getElementById(`accounts-${index}-priceMax`).value);
-          item.stock = parseInt(document.getElementById(`accounts-${index}-stock`).value);
-        });
+    function saveData() {
+      try {
+        const data = document.getElementById('storeData').value;
+        JSON.parse(data); // Validate
+        localStorage.setItem('bluevision_store', data);
+        document.getElementById('saveMessage').textContent = '✅ Saved successfully!';
+        setTimeout(() => document.getElementById('saveMessage').textContent = '', 3000);
+      } catch (e) {
+        alert('Invalid JSON!');
       }
-      
-      currentData.lastUpdated = new Date().toISOString();
-      localStorage.setItem('bluevision_store', JSON.stringify(currentData));
-      
-      if (window.opener && window.opener.BlueVisionStore) {
-        window.opener.BlueVisionStore.updateData(currentData);
-      }
-      
-      alert('✅ Changes saved successfully! Refresh the main page to see updates.');
     }
 
     function exportData() {
-      const blob = new Blob([JSON.stringify(currentData, null, 2)], { type: 'application/json' });
-      const url = URL.createObjectURL(blob);
+      const data = document.getElementById('storeData').value;
+      const blob = new Blob([data], {type: 'application/json'});
       const a = document.createElement('a');
-      a.href = url;
-      a.download = `bluevision_backup_${new Date().toISOString().split('T')[0]}.json`;
+      a.href = URL.createObjectURL(blob);
+      a.download = 'bluevision_backup.json';
       a.click();
     }
 
@@ -377,40 +124,19 @@
         const file = e.target.files[0];
         const reader = new FileReader();
         reader.onload = (event) => {
-          try {
-            const imported = JSON.parse(event.target.result);
-            currentData = imported;
-            localStorage.setItem('bluevision_store', JSON.stringify(currentData));
-            renderEditor();
-            alert('✅ Data imported successfully!');
-          } catch (err) {
-            alert('❌ Invalid JSON file!');
-          }
+          document.getElementById('storeData').value = event.target.result;
         };
         reader.readAsText(file);
       };
       input.click();
     }
 
-    function resetData() {
-      if (confirm('⚠️ Reset all data to default? This cannot be undone!')) {
-        localStorage.removeItem('bluevision_store');
-        location.reload();
-      }
+    // Check auth on load
+    if (sessionStorage.getItem('bv_auth') === 'true') {
+      document.getElementById('loginForm').style.display = 'none';
+      document.getElementById('adminContent').style.display = 'block';
+      loadData();
     }
-
-    // Tab switching
-    document.querySelectorAll('.admin-tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        document.querySelectorAll('.admin-tab').forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        currentTab = tab.dataset.tab;
-        renderEditor();
-      });
-    });
-
-    // Initialize
-    loadData();
   </script>
 </body>
 </html>
