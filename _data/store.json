@@ -1,0 +1,453 @@
+{
+  "metadata": {
+    "version": "2.0.0",
+    "lastUpdated": "2026-04-16T12:00:00.000Z",
+    "updatedBy": "Admin",
+    "totalProducts": 31,
+    "currency": "EUR"
+  },
+  
+  "spoofer": {
+    "permanent": {
+      "name": "BlueVision Permanent Spoofer",
+      "price": 49.99,
+      "stock": 156,
+      "warranty": "Lifetime",
+      "features": [
+        "EAC / BE / Vanguard Compatible",
+        "Automatic Serial Generation",
+        "Permanent & Clean Uninstall",
+        "Lifetime Updates Included"
+      ],
+      "badge": "BESTSELLER"
+    },
+    "temp": {
+      "name": "Temporary Spoofer",
+      "price": 19.99,
+      "stock": 234,
+      "duration": "30 days",
+      "warranty": "30 days"
+    },
+    "cleaner": {
+      "name": "Cleaner Tool",
+      "price": 14.99,
+      "stock": -1,
+      "description": "Remove traces & ban evidence"
+    }
+  },
+  
+  "discord": [
+    {
+      "id": "d1",
+      "name": "Discord Token (1 Month)",
+      "price": 2.99,
+      "stock": 147,
+      "warranty": "24h",
+      "badge": "high",
+      "icon": "fab fa-discord",
+      "category": "tokens"
+    },
+    {
+      "id": "d2",
+      "name": "Discord Token (3 Month)",
+      "price": 6.99,
+      "stock": 89,
+      "warranty": "7 days",
+      "badge": "high",
+      "icon": "fab fa-discord",
+      "category": "tokens"
+    },
+    {
+      "id": "d3",
+      "name": "Discord Nitro (1 Month)",
+      "price": 4.99,
+      "stock": 34,
+      "warranty": "48h",
+      "badge": "medium",
+      "icon": "fab fa-discord",
+      "category": "nitro"
+    },
+    {
+      "id": "d4",
+      "name": "Discord Nitro (1 Year)",
+      "price": 49.99,
+      "stock": 12,
+      "warranty": "30 days",
+      "badge": "low",
+      "icon": "fab fa-discord",
+      "category": "nitro"
+    },
+    {
+      "id": "d5",
+      "name": "Discord Early Supporter",
+      "price": 29.99,
+      "stock": 8,
+      "warranty": "Lifetime",
+      "badge": "low",
+      "icon": "fab fa-discord",
+      "category": "special"
+    }
+  ],
+  
+  "roblox": [
+    {
+      "id": "r1",
+      "name": "Roblox Account (1k Robux)",
+      "price": 9.99,
+      "stock": 56,
+      "warranty": "24h",
+      "badge": "high",
+      "icon": "fas fa-gamepad"
+    },
+    {
+      "id": "r2",
+      "name": "Roblox Account (10k Robux)",
+      "price": 49.99,
+      "stock": 23,
+      "warranty": "48h",
+      "badge": "medium",
+      "icon": "fas fa-gamepad"
+    },
+    {
+      "id": "r3",
+      "name": "Roblox Limited Account",
+      "price": 99.99,
+      "priceMax": 499.99,
+      "priceRange": true,
+      "stock": 7,
+      "warranty": "7 days",
+      "badge": "low",
+      "icon": "fas fa-crown"
+    },
+    {
+      "id": "r4",
+      "name": "Roblox 2010+ Account",
+      "price": 19.99,
+      "stock": 31,
+      "warranty": "48h",
+      "badge": "medium",
+      "icon": "fas fa-calendar"
+    },
+    {
+      "id": "r5",
+      "name": "Roblox Dominus Account",
+      "price": 299.99,
+      "priceMax": 999.99,
+      "priceRange": true,
+      "stock": 3,
+      "warranty": "14 days",
+      "badge": "low",
+      "icon": "fas fa-hat-wizard"
+    }
+  ],
+  
+  "fortnite": [
+    {
+      "id": "f1",
+      "name": "Fortnite OG Skull Trooper",
+      "price": 149.99,
+      "stock": 5,
+      "warranty": "30 days",
+      "badge": "low",
+      "icon": "fab fa-fort-awesome"
+    },
+    {
+      "id": "f2",
+      "name": "Fortnite Black Knight",
+      "price": 199.99,
+      "stock": 3,
+      "warranty": "30 days",
+      "badge": "low",
+      "icon": "fab fa-fort-awesome"
+    },
+    {
+      "id": "f3",
+      "name": "Fortnite Renegade Raider",
+      "price": 249.99,
+      "stock": 2,
+      "warranty": "30 days",
+      "badge": "low",
+      "icon": "fab fa-fort-awesome"
+    },
+    {
+      "id": "f4",
+      "name": "Fortnite Stacked (200+ Skins)",
+      "price": 89.99,
+      "stock": 14,
+      "warranty": "14 days",
+      "badge": "medium",
+      "icon": "fab fa-fort-awesome"
+    },
+    {
+      "id": "f5",
+      "name": "Fortnite Fresh Account",
+      "price": 4.99,
+      "stock": 234,
+      "warranty": "24h",
+      "badge": "high",
+      "icon": "fab fa-fort-awesome"
+    }
+  ],
+  
+  "premium": [
+    {
+      "id": "p1",
+      "name": "Spotify Premium (1 Month)",
+      "price": 2.99,
+      "stock": 189,
+      "warranty": "30 days",
+      "badge": "high",
+      "icon": "fab fa-spotify"
+    },
+    {
+      "id": "p2",
+      "name": "Spotify Premium (1 Year)",
+      "price": 24.99,
+      "stock": 78,
+      "warranty": "180 days",
+      "badge": "high",
+      "icon": "fab fa-spotify"
+    },
+    {
+      "id": "p3",
+      "name": "Netflix Premium (1 Month)",
+      "price": 4.99,
+      "stock": 123,
+      "warranty": "30 days",
+      "badge": "high",
+      "icon": "fas fa-film"
+    },
+    {
+      "id": "p4",
+      "name": "Disney+ (1 Year)",
+      "price": 19.99,
+      "stock": 45,
+      "warranty": "180 days",
+      "badge": "medium",
+      "icon": "fab fa-disney"
+    },
+    {
+      "id": "p5",
+      "name": "Amazon Prime (1 Month)",
+      "price": 3.99,
+      "stock": 67,
+      "warranty": "30 days",
+      "badge": "medium",
+      "icon": "fab fa-amazon"
+    },
+    {
+      "id": "p6",
+      "name": "Crunchyroll Premium",
+      "price": 2.49,
+      "stock": 92,
+      "warranty": "30 days",
+      "badge": "high",
+      "icon": "fas fa-tv"
+    }
+  ],
+  
+  "scripts": [
+    {
+      "id": "s1",
+      "name": "Emery Hamburg",
+      "price": 24.99,
+      "stock": 89,
+      "icon": "fas fa-hamburger",
+      "featured": true,
+      "tags": ["aimbot", "esp", "farm", "silent"],
+      "features": [
+        "Smooth Aimbot (Configurable FOV)",
+        "2D/3D Box ESP with Health Bars",
+        "Auto Farm (All Games)",
+        "Silent Aim (Undetected)",
+        "Teleport & Speed Hack"
+      ]
+    },
+    {
+      "id": "s2",
+      "name": "Phantom X",
+      "price": 19.99,
+      "stock": 234,
+      "icon": "fas fa-ghost",
+      "tags": ["aimbot", "esp", "executor"],
+      "features": [
+        "Level 7 Executor",
+        "Full Lua Compatibility",
+        "Integrated Aimbot & ESP",
+        "Script Hub Included"
+      ]
+    },
+    {
+      "id": "s3",
+      "name": "Synapse Z",
+      "price": 14.99,
+      "stock": -1,
+      "icon": "fas fa-bolt",
+      "tags": ["executor"],
+      "features": [
+        "Multi-API Support",
+        "Decompiler Included",
+        "Auto-Attach & Inject",
+        "1000+ Script Database"
+      ]
+    },
+    {
+      "id": "s4",
+      "name": "Dragon Executor",
+      "price": 29.99,
+      "stock": 45,
+      "icon": "fas fa-dragon",
+      "tags": ["executor", "aimbot", "esp"],
+      "features": [
+        "Level 7 Execution",
+        "Built-in Aimbot & ESP",
+        "Script Decompiler",
+        "Auto-Update System"
+      ]
+    },
+    {
+      "id": "s5",
+      "name": "Script-Ware",
+      "price": 34.99,
+      "stock": 67,
+      "icon": "fas fa-crown",
+      "tags": ["executor", "aimbot", "esp", "farm"],
+      "features": [
+        "1000+ Script Library",
+        "Premium Aimbot & ESP",
+        "Auto Farm Scripts",
+        "Priority Support"
+      ]
+    },
+    {
+      "id": "s6",
+      "name": "KrX Client",
+      "price": 21.99,
+      "stock": 123,
+      "icon": "fas fa-bomb",
+      "tags": ["executor", "aimbot", "esp"],
+      "features": [
+        "Undetected Execution",
+        "Clean Modern UI",
+        "Aimbot & ESP Included",
+        "Regular Updates"
+      ]
+    }
+  ],
+  
+  "accounts": [
+    {
+      "id": "a1",
+      "type": "Roblox",
+      "name": "Roblox Limited Accounts",
+      "priceMin": 49.99,
+      "priceMax": 499.99,
+      "stock": 7,
+      "icon": "fas fa-gamepad",
+      "class": "roblox",
+      "features": [
+        "Dominus / Valkyrie",
+        "100k+ Robux",
+        "Email Access",
+        "2010+ Account"
+      ]
+    },
+    {
+      "id": "a2",
+      "type": "Fortnite",
+      "name": "OG Skull / Ghoul Trooper",
+      "priceMin": 79.99,
+      "priceMax": 299.99,
+      "stock": 5,
+      "icon": "fab fa-fort-awesome",
+      "class": "fortnite",
+      "features": [
+        "Full Email Access",
+        "200+ Skins",
+        "Season 2-3 Battle Pass",
+        "OG Name"
+      ]
+    },
+    {
+      "id": "a3",
+      "type": "Discord",
+      "name": "Nitro / Early Supporter",
+      "priceMin": 9.99,
+      "priceMax": 49.99,
+      "stock": 12,
+      "icon": "fab fa-discord",
+      "class": "discord",
+      "features": [
+        "Nitro Boost Included",
+        "Early Supporter Badge",
+        "Verified Email",
+        "2016+ Account"
+      ]
+    },
+    {
+      "id": "a4",
+      "type": "Valorant",
+      "name": "High ELO / Skins",
+      "priceMin": 39.99,
+      "priceMax": 199.99,
+      "stock": 9,
+      "icon": "fas fa-crosshairs",
+      "class": "valorant",
+      "features": [
+        "Immortal / Radiant Rank",
+        "Premium Skins",
+        "Full Access",
+        "Battle Pass Complete"
+      ]
+    },
+    {
+      "id": "a5",
+      "type": "Steam",
+      "name": "Level 100+ / Games",
+      "priceMin": 29.99,
+      "priceMax": 149.99,
+      "stock": 15,
+      "icon": "fab fa-steam",
+      "class": "steam",
+      "features": [
+        "50+ Games",
+        "CS:GO / Rust / GTA V",
+        "Original Email",
+        "Level 100+ Profile"
+      ]
+    },
+    {
+      "id": "a6",
+      "type": "Minecraft",
+      "name": "OG / Cape Accounts",
+      "priceMin": 14.99,
+      "priceMax": 89.99,
+      "stock": 11,
+      "icon": "fas fa-cube",
+      "class": "minecraft",
+      "features": [
+        "Minecon Capes",
+        "OG Names",
+        "Full Access",
+        "2012+ Account"
+      ]
+    }
+  ],
+  
+  "settings": {
+    "siteName": "BlueVision",
+    "discordInvite": "https://discord.gg/38QmF8TKCr",
+    "currency": "EUR",
+    "currencySymbol": "€",
+    "showStockCount": true,
+    "enableLiveTicker": true,
+    "maintenanceMode": false
+  },
+  
+  "stats": {
+    "totalCustomers": 2847,
+    "totalOrders": 12453,
+    "averageRating": 4.8,
+    "supportResponseTime": "15min"
+  }
+}
