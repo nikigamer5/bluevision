@@ -1,1 +1,227 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accounts | BlueVision</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="networkCanvas"></canvas>
+  <div class="bg-overlay"></div>
 
+  <header>
+    <div class="container navbar">
+      <div class="logo">
+        <i class="fas fa-eye"></i>
+        <span>Blue<span class="vision-highlight">Vision</span></span>
+      </div>
+      <div class="nav-links">
+        <a href="/BlueVision/"><i class="fas fa-home"></i> Home</a>
+        <a href="/BlueVision/#spoofer"><i class="fas fa-shield-virus"></i> Spoofer</a>
+        <a href="/BlueVision/#stock"><i class="fas fa-boxes"></i> Stock</a>
+        <a href="/BlueVision/tools.html"><i class="fas fa-code"></i> Tools</a>
+        <a href="/BlueVision/accounts.html" class="nav-active"><i class="fas fa-users"></i> Accounts</a>
+      </div>
+      <div class="header-actions">
+        <a href="https://discord.gg/38QmF8TKCr" target="_blank" class="discord-btn">
+          <i class="fab fa-discord"></i> Join Discord
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="container accounts-section" style="padding-top: 60px;">
+      <div class="section-header">
+        <h2 class="section-title">
+          <i class="fas fa-user-circle"></i>
+          <span class="gradient-text">Premium Accounts</span>
+        </h2>
+        <p class="section-sub">High-quality accounts with warranty & replacement</p>
+      </div>
+
+      <div class="accounts-grid">
+        <!-- Roblox -->
+        <div class="account-card">
+          <div class="account-type roblox">Roblox</div>
+          <div class="account-details">
+            <h4>Roblox Limited Accounts</h4>
+            <ul>
+              <li><i class="fas fa-check-circle"></i> Dominus / Valkyrie</li>
+              <li><i class="fas fa-check-circle"></i> 100k+ Robux</li>
+              <li><i class="fas fa-check-circle"></i> Email Access</li>
+              <li><i class="fas fa-check-circle"></i> 2010+ Account</li>
+            </ul>
+            <div class="account-price">€49.99 - €499.99</div>
+            <div class="account-stock"><i class="fas fa-box"></i> 7 in stock</div>
+          </div>
+          <button class="btn-account" data-product="roblox-acc">View Details</button>
+        </div>
+
+        <!-- Fortnite -->
+        <div class="account-card">
+          <div class="account-type fortnite">Fortnite</div>
+          <div class="account-details">
+            <h4>OG Skull / Ghoul Trooper</h4>
+            <ul>
+              <li><i class="fas fa-check-circle"></i> Full Email Access</li>
+              <li><i class="fas fa-check-circle"></i> 200+ Skins</li>
+              <li><i class="fas fa-check-circle"></i> Season 2-3 Battle Pass</li>
+              <li><i class="fas fa-check-circle"></i> OG Name</li>
+            </ul>
+            <div class="account-price">€79.99 - €299.99</div>
+            <div class="account-stock"><i class="fas fa-box"></i> 5 in stock</div>
+          </div>
+          <button class="btn-account" data-product="fortnite-acc">View Details</button>
+        </div>
+
+        <!-- Discord -->
+        <div class="account-card">
+          <div class="account-type discord">Discord</div>
+          <div class="account-details">
+            <h4>Nitro / Early Supporter</h4>
+            <ul>
+              <li><i class="fas fa-check-circle"></i> Nitro Boost Included</li>
+              <li><i class="fas fa-check-circle"></i> Early Supporter Badge</li>
+              <li><i class="fas fa-check-circle"></i> Verified Email</li>
+              <li><i class="fas fa-check-circle"></i> 2016+ Account</li>
+            </ul>
+            <div class="account-price">€9.99 - €49.99</div>
+            <div class="account-stock"><i class="fas fa-box"></i> 12 in stock</div>
+          </div>
+          <button class="btn-account" data-product="discord-acc">View Details</button>
+        </div>
+
+        <!-- Valorant -->
+        <div class="account-card">
+          <div class="account-type valorant">Valorant</div>
+          <div class="account-details">
+            <h4>High ELO / Skins</h4>
+            <ul>
+              <li><i class="fas fa-check-circle"></i> Immortal / Radiant Rank</li>
+              <li><i class="fas fa-check-circle"></i> Premium Skins</li>
+              <li><i class="fas fa-check-circle"></i> Full Access</li>
+              <li><i class="fas fa-check-circle"></i> Battle Pass Complete</li>
+            </ul>
+            <div class="account-price">€39.99 - €199.99</div>
+            <div class="account-stock"><i class="fas fa-box"></i> 9 in stock</div>
+          </div>
+          <button class="btn-account" data-product="valorant-acc">View Details</button>
+        </div>
+
+        <!-- Steam -->
+        <div class="account-card">
+          <div class="account-type steam">Steam</div>
+          <div class="account-details">
+            <h4>Level 100+ / Games</h4>
+            <ul>
+              <li><i class="fas fa-check-circle"></i> 50+ Games</li>
+              <li><i class="fas fa-check-circle"></i> CS:GO / Rust / GTA V</li>
+              <li><i class="fas fa-check-circle"></i> Original Email</li>
+              <li><i class="fas fa-check-circle"></i> Level 100+ Profile</li>
+            </ul>
+            <div class="account-price">€29.99 - €149.99</div>
+            <div class="account-stock"><i class="fas fa-box"></i> 15 in stock</div>
+          </div>
+          <button class="btn-account" data-product="steam-acc">View Details</button>
+        </div>
+
+        <!-- Minecraft -->
+        <div class="account-card">
+          <div class="account-type minecraft">Minecraft</div>
+          <div class="account-details">
+            <h4>OG / Cape Accounts</h4>
+            <ul>
+              <li><i class="fas fa-check-circle"></i> Minecon Capes</li>
+              <li><i class="fas fa-check-circle"></i> OG Names</li>
+              <li><i class="fas fa-check-circle"></i> Full Access</li>
+              <li><i class="fas fa-check-circle"></i> 2012+ Account</li>
+            </ul>
+            <div class="account-price">€14.99 - €89.99</div>
+            <div class="account-stock"><i class="fas fa-box"></i> 11 in stock</div>
+          </div>
+          <button class="btn-account" data-product="minecraft-acc">View Details</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2026 BlueVision. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Network Canvas (gleicher Code wie oben)
+    const canvas = document.getElementById('networkCanvas');
+    const ctx = canvas.getContext('2d');
+    let width, height, particles = [], mouse = { x: -1000, y: -1000 };
+
+    function resize() {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width;
+      canvas.height = height;
+    }
+
+    function createParticles() {
+      const count = Math.floor((width * height) / 15000);
+      particles = [];
+      for (let i = 0; i < count; i++) {
+        particles.push({
+          x: Math.random() * width, y: Math.random() * height,
+          vx: (Math.random() - 0.5) * 0.5, vy: (Math.random() - 0.5) * 0.5,
+          radius: Math.random() * 2 + 1
+        });
+      }
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, width, height);
+      particles.forEach(p => {
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0 || p.x > width) p.vx *= -1;
+        if (p.y < 0 || p.y > height) p.vy *= -1;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(59, 130, 246, 0.4)';
+        ctx.fill();
+      });
+      ctx.strokeStyle = 'rgba(59, 130, 246, 0.08)';
+      ctx.lineWidth = 0.5;
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          if (distance < 150) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(59, 130, 246, ${(1 - distance / 150) * 0.15})`;
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(draw);
+    }
+
+    window.addEventListener('resize', () => { resize(); createParticles(); });
+    canvas.addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
+    resize(); createParticles(); draw();
+
+    // Buy buttons
+    document.querySelectorAll('[data-product]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        alert('🛒 Added to cart!\n\nJoin Discord to complete purchase:\ndiscord.gg/38QmF8TKCr');
+      });
+    });
+  </script>
+</body>
+</html>
